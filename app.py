@@ -7,7 +7,7 @@ model=pickle.load(open("Crop.pkl","rb"))
 app=Flask(__name__)
 @app.route('/')
 def home():
-    return "hello madhav"
+    return "hello madhav abuj"
 
 @app.route('/predict',methods=["POST"])
 def predict ():
