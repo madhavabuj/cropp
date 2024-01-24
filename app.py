@@ -1,6 +1,17 @@
 from flask import Flask,request,jsonify
 import pickle
-
+import time
+import pyodbc
+import pyttsx3
+from io import BytesIO
+import threading
+import requests     
+import base64 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from reportlab.pdfgen import canvas
  
 model=pickle.load(open("Crop.pkl","rb"))
 
