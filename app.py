@@ -5,7 +5,7 @@ import pyodbc
 import pyttsx3
 from io import BytesIO
 import threading
-   
+import requests   
 import base64 
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -92,18 +92,15 @@ def send ():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
         server.quit()
-        return render_template('main.html')
+        return "send sucsefully"
+       
 def gmail2 (*karg) :
-      data=request.form.get('data')
-   #r=list(map(lambda x,y:x*y,add.p2,add.q2))
-  # xx=list(LoginWindow.dict_data.keys())
-  # d2=[(str(xx[i]),str(q2[i]),str(p2[i]),str(r[i])) for i in range(len(p2))]
-      d2=  []
+      d2=[]
       dd=time.strftime("%d%S%M")
       date=str(time.strftime("%Y:%m:%d"))
       billNO=str(f"Bill-{dd}.pdf")
       billN=str(f"Bill-{dd}.")
-  
+   
       buf=BytesIO()
       c = canvas.Canvas(buf,pagesize=(200, 250), bottomup=0)
       c.setFillColorRGB(0.8, 0, 0.7)
@@ -144,12 +141,12 @@ def gmail2 (*karg) :
       c.drawCentredString(125, 118, "Price")
       c.drawCentredString(148, 118, "Qty.")
       c.drawCentredString(173, 118, "Total")
-  
-  
+   
+   
       c.drawString(30, 230, "Thanks for coming!!")
-  
-  
-  
+   
+   
+   
       a=75
       b=108
       sr=0
@@ -169,8 +166,8 @@ def gmail2 (*karg) :
       c.save()
       buf.seek(0)
       return buf
-
-
+      
+   
 
 
 if __name__ == "__main__":
