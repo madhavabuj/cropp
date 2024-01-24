@@ -19,9 +19,11 @@ app=Flask(__name__)
 @app.route('/')
 def home():
     return "hello madhav abuj"
-@app.route('/abuj')
+@app.route('/abuj',methods=["POST"])
 def abuj():
-    return "hello abuj"
+    #return "hello abuj"
+    mail=request.form.get('mail')
+    return mail
 
 
 @app.route('/predict',methods=["POST"])
