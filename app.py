@@ -90,84 +90,84 @@ def send ():
         server.quit()
         return render_template('main.html')
 def gmail2 (*karg) :
-        data=request.form.get('data')
-    #r=list(map(lambda x,y:x*y,add.p2,add.q2))
-   # xx=list(LoginWindow.dict_data.keys())
-   # d2=[(str(xx[i]),str(q2[i]),str(p2[i]),str(r[i])) for i in range(len(p2))]
-       d2=  []
-       dd=time.strftime("%d%S%M")
-       date=str(time.strftime("%Y:%m:%d"))
-       billNO=str(f"Bill-{dd}.pdf")
-       billN=str(f"Bill-{dd}.")
-   
-       buf=BytesIO()
-       c = canvas.Canvas(buf,pagesize=(200, 250), bottomup=0)
-       c.setFillColorRGB(0.8, 0, 0.7)
-       c.line(70, 22, 180, 22)
-       c.line(5, 45, 195, 45)
-       c.line(15, 120, 185, 120)
-       c.line(35, 108, 35, 220)
-       c.line(115, 108, 115, 220)
-       c.line(135, 108, 135, 220)
-       c.line(160, 108, 160, 220)
-       c.line(15, 220, 185, 220)
-       c.translate(10, 40)
-       c.scale(1, -1)
-       #c.drawImage(file_name, 0, 0, width=50, height=30)
-       c.scale(1, -1)
-       c.translate(-10, -40)
-       c.setFont("Times-Bold", 10)
-       c.drawCentredString(125, 20,"Hotel Kanayy" )
-       c.setFont("Times-Bold", 5)
-       c.drawCentredString(125, 30, "Solapur-Dhule Rode")
-       c.drawCentredString(125, 35,  " Manjarsumbha")
-       c.setFont("Times-Bold", 6)
-       c.drawCentredString(125, 42, "GST No")
-       c.setFont("Times-Bold", 8)
-       c.drawCentredString(100, 55, "Hotell_Bill")
-       c.setFont("Times-Bold", 5)
-       c.drawRightString(70, 70, "Bill No. :")
-       c.drawRightString(100, 70, billN)
-       c.drawRightString(70, 80, "Date :")
-       c.drawRightString(100, 80, date)
-       c.drawRightString(70, 90, "Customer Name :")
-       c.drawRightString(100, 90, "---")
-       c.drawRightString(70, 100, "Phone No. :")
-       c.drawRightString(100, 100, "97XXXXXX")
-       c.roundRect(15, 108, 170, 130, 10, stroke=1, fill=0)
-       c.drawCentredString(25, 118, "S.No.")
-       c.drawCentredString(75, 118, "Orders")
-       c.drawCentredString(125, 118, "Price")
-       c.drawCentredString(148, 118, "Qty.")
-       c.drawCentredString(173, 118, "Total")
-   
-   
-       c.drawString(30, 230, "Thanks for coming!!")
-   
-   
-   
-       a=75
-       b=108
-       sr=0
-       tot=0
-       for i in d2:
-           sr+=1
-           b+=10
-           c.drawCentredString(25, int(f"{b+10}"), f"{sr}")
-           c.drawCentredString(75, int(f"{b+10}"), f"{i[0]}")
-           c.drawCentredString(125, int(f"{b+10}"), f"{i[1]}")
-           c.drawCentredString(148, int(f"{b+10}"), f"{i[2]}")
-           c.drawCentredString(173, int(f"{b+10}"), f"{i[3]}")
-           tot+=int(i[3])
-       s=str(f'RS- {tot}')
-       c.drawRightString(180, 228,s)
-       c.showPage()
-       c.save()
-       buf.seek(0)
-       return buf
+      data=request.form.get('data')
+   #r=list(map(lambda x,y:x*y,add.p2,add.q2))
+  # xx=list(LoginWindow.dict_data.keys())
+  # d2=[(str(xx[i]),str(q2[i]),str(p2[i]),str(r[i])) for i in range(len(p2))]
+      d2=  []
+      dd=time.strftime("%d%S%M")
+      date=str(time.strftime("%Y:%m:%d"))
+      billNO=str(f"Bill-{dd}.pdf")
+      billN=str(f"Bill-{dd}.")
+  
+      buf=BytesIO()
+      c = canvas.Canvas(buf,pagesize=(200, 250), bottomup=0)
+      c.setFillColorRGB(0.8, 0, 0.7)
+      c.line(70, 22, 180, 22)
+      c.line(5, 45, 195, 45)
+      c.line(15, 120, 185, 120)
+      c.line(35, 108, 35, 220)
+      c.line(115, 108, 115, 220)
+      c.line(135, 108, 135, 220)
+      c.line(160, 108, 160, 220)
+      c.line(15, 220, 185, 220)
+      c.translate(10, 40)
+      c.scale(1, -1)
+      #c.drawImage(file_name, 0, 0, width=50, height=30)
+      c.scale(1, -1)
+      c.translate(-10, -40)
+      c.setFont("Times-Bold", 10)
+      c.drawCentredString(125, 20,"Hotel Kanayy" )
+      c.setFont("Times-Bold", 5)
+      c.drawCentredString(125, 30, "Solapur-Dhule Rode")
+      c.drawCentredString(125, 35,  " Manjarsumbha")
+      c.setFont("Times-Bold", 6)
+      c.drawCentredString(125, 42, "GST No")
+      c.setFont("Times-Bold", 8)
+      c.drawCentredString(100, 55, "Hotell_Bill")
+      c.setFont("Times-Bold", 5)
+      c.drawRightString(70, 70, "Bill No. :")
+      c.drawRightString(100, 70, billN)
+      c.drawRightString(70, 80, "Date :")
+      c.drawRightString(100, 80, date)
+      c.drawRightString(70, 90, "Customer Name :")
+      c.drawRightString(100, 90, "---")
+      c.drawRightString(70, 100, "Phone No. :")
+      c.drawRightString(100, 100, "97XXXXXX")
+      c.roundRect(15, 108, 170, 130, 10, stroke=1, fill=0)
+      c.drawCentredString(25, 118, "S.No.")
+      c.drawCentredString(75, 118, "Orders")
+      c.drawCentredString(125, 118, "Price")
+      c.drawCentredString(148, 118, "Qty.")
+      c.drawCentredString(173, 118, "Total")
+  
+  
+      c.drawString(30, 230, "Thanks for coming!!")
+  
+  
+  
+      a=75
+      b=108
+      sr=0
+      tot=0
+      for i in d2:
+          sr+=1
+          b+=10
+          c.drawCentredString(25, int(f"{b+10}"), f"{sr}")
+          c.drawCentredString(75, int(f"{b+10}"), f"{i[0]}")
+          c.drawCentredString(125, int(f"{b+10}"), f"{i[1]}")
+          c.drawCentredString(148, int(f"{b+10}"), f"{i[2]}")
+          c.drawCentredString(173, int(f"{b+10}"), f"{i[3]}")
+          tot+=int(i[3])
+      s=str(f'RS- {tot}')
+      c.drawRightString(180, 228,s)
+      c.showPage()
+      c.save()
+      buf.seek(0)
+      return buf
 
 
 
- 
+
 if __name__ == "__main__":
     app.run(debug=True)
