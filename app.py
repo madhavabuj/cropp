@@ -36,7 +36,7 @@ def predict ():
     
     return jsonify(str(result))
 
-@app.route('/send',methods=["POST"])
+@app.route('/send')
 def send ():
     
    # email=request.form.get('data')
