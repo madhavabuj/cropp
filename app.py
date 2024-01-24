@@ -19,6 +19,10 @@ app=Flask(__name__)
 @app.route('/')
 def home():
     return "hello madhav abuj"
+@app.route('/abuj')
+def abuj():
+    return "hello abuj"
+
 
 @app.route('/predict',methods=["POST"])
 def predict ():
