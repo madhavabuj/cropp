@@ -5,7 +5,7 @@ import pyodbc
 import pyttsx3
 from io import BytesIO
 import threading
-import requests     
+   
 import base64 
 import smtplib
 from email.mime.multipart import MIMEMultipart
