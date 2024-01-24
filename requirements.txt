@@ -2,3 +2,6 @@ gunicorn
 numpy
 flask
 scikit-learn
+reportlab
+pyodbc
+pyttsx3
