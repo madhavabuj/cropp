@@ -42,7 +42,7 @@ def predict ():
     
     return jsonify(str(result))
 
-@app.route('/send')
+@app.route('/send',methods=["POST"])
 def send ():
     
    # email=request.form.get('data')
@@ -97,7 +97,7 @@ def send ():
         return "send sucsefully"
        
 def gmail2 (*karg) :
-      d2=[]
+      d2=request.get_json()
       dd=time.strftime("%d%S%M")
       date=str(time.strftime("%Y:%m:%d"))
       billNO=str(f"Bill-{dd}.pdf")
