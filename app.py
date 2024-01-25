@@ -45,7 +45,7 @@ def predict ():
 @app.route('/send',methods=["POST"])
 def send ():
     
-    email=request.form.get('email')
+    data=request.get_json()
     import time
     dd=time.strftime("%d%S%M")
     d=str(time.strftime("%Y:%m:%d"))
@@ -94,10 +94,12 @@ def send ():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
         server.quit()
-        return email
+        return data
        
 def gmail2 (*karg) :
-      d2=request.get_json()
+      data=request.get_json()
+      d2=[]
+      #d2=request.get_json()
       dd=time.strftime("%d%S%M")
       date=str(time.strftime("%Y:%m:%d"))
       billNO=str(f"Bill-{dd}.pdf")
