@@ -75,7 +75,7 @@ def send ():
         d=dict(response.json())
 
         sender_email = 'abujpatil059@gmail.com'
-        receiver_email = 'madhavabuj139@gmail.com'
+        receiver_email = data['gmail']
         subject = "Your Bill Recipt"
         body = f'''Thanks for comming
         For Making Payment ONLine Plse click on bilow link
@@ -98,7 +98,7 @@ def send ():
        
 def gmail2 (*karg) :
       data=request.get_json()
-      d2=[]
+      d2=data['item']
       #d2=request.get_json()
       dd=time.strftime("%d%S%M")
       date=str(time.strftime("%Y:%m:%d"))
