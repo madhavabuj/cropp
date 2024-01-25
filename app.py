@@ -45,7 +45,7 @@ def predict ():
 @app.route('/send',methods=["POST"])
 def send ():
     
-   # email=request.form.get('data')
+    email=request.form.get('email')
     import time
     dd=time.strftime("%d%S%M")
     d=str(time.strftime("%Y:%m:%d"))
@@ -78,7 +78,7 @@ def send ():
         receiver_email = 'madhavabuj139@gmail.com'
         subject = "Your Bill Recipt"
         body = f'''Thanks for comming
-                For Making Payment ONLine Plse click on bilow link
+        For Making Payment ONLine Plse click on bilow link
                 '''
         password = 'pvaqevyonvdialyg'
         msg = MIMEMultipart()
@@ -94,7 +94,7 @@ def send ():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
         server.quit()
-        return "send sucsefully"
+        return email
        
 def gmail2 (*karg) :
       d2=request.get_json()
