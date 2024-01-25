@@ -94,7 +94,7 @@ def send ():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
         server.quit()
-        return data['gm']
+        return data['gmail']
        
 def gmail2 (*karg) :
       data=request.get_json()
