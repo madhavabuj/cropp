@@ -22,7 +22,7 @@ def home():
 @app.route('/abuj',methods=["POST"])
 def abuj():
     #return "hello abuj"
-    mail=request.form.get('mail')
+    mail=request.get_json()
     return mail
 
 
