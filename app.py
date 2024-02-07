@@ -19,11 +19,11 @@ app=Flask(__name__)
 @app.route('/')
 def home():
     return "hello madhav abuj"
-@app.route('/abuj',methods=["POST"])
+@app.route('/abuj')
 def abuj():
-    #return "hello abuj"
-    mail=request.get_json()
-    return  "helo this from flask and your list is"
+    return "hello abuj"
+    #mail=request.get_json()
+    #return  "helo this from flask and your list is"
 
 
 @app.route('/predict',methods=["POST"])
