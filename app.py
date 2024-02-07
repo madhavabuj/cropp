@@ -24,8 +24,7 @@ def abuj():
     return "hello abuj"
     #mail=request.get_json()
     #return  "helo this from flask and your list is"
-
-
+   
 @app.route('/predict',methods=["POST"])
 def predict ():
     n = request.form.get('n')
