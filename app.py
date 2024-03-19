@@ -76,8 +76,7 @@ def send ():
         sender_email = 'abujpatil059@gmail.com'
         receiver_email = data['gmail']
         subject = "Your Bill Recipt"
-        body = f'''Thanks for comming
-        For Making Payment ONLine Plse click on bilow link
+        body = f'''Thanks for comming.\n For Making Payment ONLine Plse click on bilow link
                 '''
         password = 'pvaqevyonvdialyg'
         msg = MIMEMultipart()
